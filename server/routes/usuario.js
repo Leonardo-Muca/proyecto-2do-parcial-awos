@@ -11,6 +11,7 @@ const app = express();
    
   app.post('/usuario', function(req,res){//req = obtener datos mandados por el cliente, res = mandar una respuesta
     let body = req.body;
+    console.log(body)
     let usr = new Usuario({
       nombre: body.nombre,
       email: body.email,
@@ -26,7 +27,7 @@ const app = express();
           });
       }
 
-      res.json({
+      return res.json({
         ok: true,
         msg: 'Usuario insertado con exito',
         usrBD
