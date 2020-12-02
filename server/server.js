@@ -17,6 +17,7 @@ app.get('/', function (req, res) {
 
 app.use(require('./routes/usuario'));
 app.use(require('./routes/libros'));
+app.use(require('./routes/categoria.js'));
 
 mongoose.connect('mongodb://localhost:27017/cafeteria', {
   useNewUrlParser: true,

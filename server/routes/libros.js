@@ -7,7 +7,7 @@ app.get('/libro', function (req, res) {
     let desde = req.query.desde || 0;
     let hasta = req.query.hasta || 5;
 
-    Libro.find({})
+    Libro.find({ disponible: true })
         .skip(Number(desde))
         .limit(Number(hasta))
         .exec((err, libros) => {
@@ -34,7 +34,8 @@ app.post('/libro', function (req, res) {//req = obtener datos mandados por el cl
     let lib = new Libro({
         titulo: body.titulo,
         autor: body.autor,
-        editorial: body.editorial
+        editorial: body.editorial,
+        disponible: body.disponible
     });
 
     lib.save((err, libBD) => {

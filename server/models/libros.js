@@ -14,6 +14,10 @@ let librosSchema = new Schema({
     editorial: {
         type: String,
         required: [true, 'La editorial es necesaria']
+    },
+    disponible: {
+        type: Boolean,
+        default: true
     }
 });
 
