@@ -21,7 +21,7 @@ app.use(require('./routes/producto'));
 app.use(require('./routes/login'));
 
 
-mongoose.connect('mongodb://localhost:27017/starbuks', {
+mongoose.connect('mongodb+srv://admin:Leoespro217@cluster0.2hoke.mongodb.net/cafeteria', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
