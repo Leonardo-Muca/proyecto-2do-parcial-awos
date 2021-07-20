@@ -7,6 +7,13 @@ const cors = require('cors');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
 
 // parse application/json
 app.use(bodyParser.json());
@@ -15,10 +22,7 @@ app.get('/', function (req, res) {
   res.send('<h1>Bienvenido amigo (localhost)</h1>');
 });
 
-app.use(require('./routes/usuario'));
-app.use(require('./routes/categoria'));
-app.use(require('./routes/producto'));
-app.use(require('./routes/login'));
+app.use('/api',require('./routes/index'));
 
 
 mongoose.connect('mongodb+srv://admin:Leoespro217@cluster0.2hoke.mongodb.net/cafeteria', {

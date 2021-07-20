@@ -1,7 +1,7 @@
 const express = require('express');
 const _ = require('underscore');
 const app = express();
-const Categoria = require('../models/categoria');
+const Categoria = require('../../models/categoria');
 
 app.get('/categoria', (req, res) => {
     let desde = req.query.desde || 0;
