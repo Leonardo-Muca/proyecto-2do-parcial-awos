@@ -3,47 +3,47 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let userSchema = new Schema({
-    name:{
-        type:String,
-        required: [true,'El nombre es necesario']
+    name: {
+        type: String,
+        required: [true, 'El nombre es necesario']
+    },
+    email: {
+        type: String,
+        required: [true, 'El email es necesario']
     },
     password: {
-        type:String,
-        required: [true,'La contraseña es necesaria']
+        type: String,
+        required: [true, 'La contraseña es necesaria']
     },
-    lastNameF:{
-        type:String,
+    lastNameF: {
+        type: String,
     },
-    lastNameM:{
-        type:String,
+    lastNameM: {
+        type: String,
     },
     age: Number,
     number: Number,
     height: Number,
-    img:{
-        type:String,
-        required:false
+    img: {
+        type: String,
+        required: false
     },
-    sex:{
-        type:String,
-        required:false
+    sex: {
+        type: String,
+        required: false
     },
-    experience:{
+    experience: {
         type: String,
         require: false
     },
-    disease:{
+    disease: {
         type: String,
         require: false
     },
-    active:{
+    active: {
         type: Boolean,
         default: true
     },
-    email:{
-        type:String,
-        required: [true,'El email es necesario']
-    }
 }, {
     timestamps: {
         createdAt: 'created_at',
@@ -52,4 +52,4 @@ let userSchema = new Schema({
     collection: "user"
 });
 
-module.exports = mongoose.model('user',userSchema);
+module.exports = mongoose.model('user', userSchema);

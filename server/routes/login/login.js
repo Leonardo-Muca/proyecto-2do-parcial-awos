@@ -1,12 +1,11 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 const Usuario = require('../../models/user.model');
 const app = express();
 
 app.post('/login', (req, res) => {
     let body = req.body;
 
-    Usuario.findOne({ email: body.email, estado: true }, (err, usrDB) => {
+    Usuario.findOne({ email: body.email, active: true }, (err, usrDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -22,7 +21,7 @@ app.post('/login', (req, res) => {
             });
         }
 
-        if (!bcrypt.compareSync(body.password, usrDB.password)) {
+        if (body.password != usrDB.password) {
             return res.status(401).json({
                 ok: false,
                 msg: 'Contraseña incorrecta, intentelo de nuevo'
@@ -31,7 +30,7 @@ app.post('/login', (req, res) => {
 
         res.json({
             ok: true,
-            msg: `Bienvenido ${usrDB.nombre}`,
+            msg: `Bienvenido ${usrDB.name}`,
             usrDB
         })
     });
