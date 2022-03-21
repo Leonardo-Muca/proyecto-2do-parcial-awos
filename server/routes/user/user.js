@@ -138,7 +138,7 @@ app.put('/', async (req, res) => {
               cont: userFind
           });
 
-      const newUser = new PlaceModel(req.body);
+      const newUser = new UserModel(req.body);
 
       let err = newUser.validateSync();
 
@@ -153,7 +153,7 @@ app.put('/', async (req, res) => {
           });
       }
 
-      const userUpdate = await PlaceModel.findByIdAndUpdate(idUser, { $set: newUser }, { new: true });
+      const userUpdate = await UserModel.findByIdAndUpdate(idUser, { $set: newUser }, { new: true });
 
       if (!userUpdate) {
           return res.status(400).json({
@@ -211,7 +211,7 @@ app.delete('/', async (req, res) => {//se pueden declara variables dentro de la 
             cont: userFind
         });
 
-    const newUser = new PlaceModel(req.body);
+    const newUser = new UserModel(req.body);
 
     let err = newUser.validateSync();
 
@@ -226,7 +226,7 @@ app.delete('/', async (req, res) => {//se pueden declara variables dentro de la 
         });
     }
 
-    const userUpdate = await PlaceModel.findByIdAndUpdate(idUser, { $set: {active} }, { new: true });
+    const userUpdate = await UserModel.findByIdAndUpdate(idUser, { $set: {active} }, { new: true });
 
     if (!userUpdate) {
         return res.status(400).json({

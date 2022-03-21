@@ -7,6 +7,10 @@ let userSchema = new Schema({
         type:String,
         required: [true,'El nombre es necesario']
     },
+    password: {
+        type:String,
+        required: [true,'La contraseña es necesaria']
+    },
     lastNameF:{
         type:String,
     },
@@ -36,6 +40,10 @@ let userSchema = new Schema({
         type: Boolean,
         default: true
     },
+    email:{
+        type:String,
+        required: [true,'El email es necesario']
+    }
 }, {
     timestamps: {
         createdAt: 'created_at',
