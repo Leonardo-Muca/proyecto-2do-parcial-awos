@@ -4,7 +4,6 @@ const app = express();
 
 app.use('/user', require('./user/user'));
 app.use('/', require('./login/login'));
-// app.use('/visit', require('./visit/visit'));
-// app.use('/waiting', require('./waiting/waiting'));
+app.use('/event', require('./event/event'));
 
 module.exports = app;
