@@ -7,6 +7,9 @@ let eventSchema = new Schema({
         type: Boolean,
         default: true
     },
+    annotations: {
+        type: String,
+    },
     couplesNumber: Number,
     date: {
         type: Date,
