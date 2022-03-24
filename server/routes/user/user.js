@@ -56,6 +56,7 @@ app.post('/', async (req, res) => {//req = obtener datos mandados por el cliente
     if (err) {
         return res.status(400).json({
             ok: false,
+            err: true,
             resp: 400,
             msg: 'Error: Error al Insertar el usuario.',
             cont: {
