@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(cors());
 app.get('/', function (req, res) {
-  res.send(require('../index.html'));
+  res.send(require('./index/index.html'));
 });
 
 app.use('/api',require('./routes/index'));
