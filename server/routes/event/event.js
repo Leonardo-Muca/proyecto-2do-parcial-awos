@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const EventModel = require('../../models/event.model');
 var mongoose = require('mongoose');
@@ -108,6 +108,7 @@ app.post('/', async (req, res) => {//req = obtener datos mandados por el cliente
             err: Object.keys(err).length === 0 ? err.message : err
         }
     });
+    console.log(err);
 }
 });
 

@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 app.use('/api',require('./routes/index'));
 
 
-mongoose.connect('mongodb+srv://leonardo:Leoespro217@cluster0.x7cbavq.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Leonardo:Leoespro217@spotyficopy.ptmc72m.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

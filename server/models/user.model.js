@@ -21,27 +21,9 @@ let userSchema = new Schema({
         type: String,
     },
     age: Number,
-    number: Number,
-    height: Number,
-    img: {
-        type: String,
-        required: false
-    },
     sex: {
         type: String,
         required: false
-    },
-    experience: {
-        type: String,
-        require: false
-    },
-    disease: {
-        type: String,
-        require: false
-    },
-    active: {
-        type: Boolean,
-        default: true
     },
 }, {
     timestamps: {

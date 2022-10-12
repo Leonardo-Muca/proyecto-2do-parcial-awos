@@ -5,7 +5,7 @@ const app = express();
 app.post('/login', (req, res) => {
     let body = req.body;
 
-    Usuario.findOne({ email: body.email, active: true }, (err, usrDB) => {
+    Usuario.findOne({ email: body.email, active: true}, (err, usrDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
