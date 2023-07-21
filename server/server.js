@@ -24,8 +24,10 @@ app.get('/', function (req, res) {
 
 app.use('/api',require('./routes/index'));
 
+const local = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1';
+const cloud = 'mongodb+srv://LeoyFer:KTroQPhbIYKbMQdt@logicparty.tsexkvy.mongodb.net/?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb+srv://Leonardo:Leoespro217@spotyficopy.ptmc72m.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(cloud, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

@@ -3,32 +3,44 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let eventSchema = new Schema({
-    active: {
-        type: Boolean,
-        default: true
-    },
-    annotations: {
-        type: String,
-    },
-    couplesNumber: Number,
-    date: {
-        type: Date,
-        default: Date.now,
-    },
-    img: {
-        type: String,
-        required: false
-    },
     name: {
         type: String,
-        required: [true, 'El nombre es necesario']
+        required: [true, 'El nombre del evento es obligatorio']
     },
-    place: {
+    number: {
+        type: Number,
+        required: [true, 'El numero personal es obligatorio']
+    },
+    refName: {
         type: String,
-        required: [true, 'El lugar es necesario']
     },
-    price: Number,
-    time: {
+    typeEvent: {
+        type: String,
+        required: [true, 'El tipo de evento es obligatorio']
+    },
+    numberGuess: {
+        type: Number,
+        required: [true, 'El numero de invitados es obligatorio']
+    },
+    cost: {
+        type: Number,
+        required: [true, 'El costo es obligatorio']
+    },
+    tableNumber: {
+        type: Number,
+    },
+    dateEvent: {
+        type: Date,
+        required: [true, 'La fecha del evento es obligatorio']
+    },
+    package: {
+        type: String,
+    },
+    initHour: {
+        type: Number,
+        required: [true, 'La hora de inicio es obligatorio']
+    },
+    ticketNumber: {
         type: Number,
     },
 }, {
